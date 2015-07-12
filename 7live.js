@@ -1,6 +1,8 @@
 if (Meteor.isClient) {
   // counter starts at 0
-  Session.setDefault('counter', 0);
+  Session.setDefault('s', 2);
+  Session.setDefault('eventImages', 'http://docode.com.ua/wp-content/uploads/pictures/pic-1.jpg|http://docode.com.ua/wp-content/uploads/pictures/pic-2.jpg|http://docode.com.ua/wp-content/uploads/pictures/pic-3.jpg|http://docode.com.ua/wp-content/uploads/pictures/pic-4.jpg|http://placehold.it/300x300|http://placehold.it/400x400|http://placehold.it/500x500|http://placehold.it/600x600');
+  Session.setDefault('CurrentTemplate','home');
 
   Template.hello.helpers({
     counter: function () {

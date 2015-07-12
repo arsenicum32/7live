@@ -9,3 +9,5 @@ autopublish
 insecure
 stylus
 coffeescript
+tomi:upload-server
+tomi:upload-jquery

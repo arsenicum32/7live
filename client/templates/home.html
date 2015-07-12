@@ -1,0 +1,70 @@
+<template name="edit">
+    <div class="container" style='text-align:center'>
+        <header>
+            <h1>поделитесь моментом!</h1>
+        </header>
+
+
+
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3>назовите ваше событие:</h3>
+                <input placeholder="поездка в кремневую долину" style='width:100%;font-size:30px;text-align:center;outline:none;padding: 30px 0'/>
+            </div>
+            <div class="panel-body">
+
+                        <label style="line-height: 40px">выберите подходящий музончик:</label>
+                        <br>
+                        <hr>
+                        <br>
+                        {{> dropzone}}
+                        <br>
+                        <hr>
+                        <br>
+
+            </div>
+        </div>
+
+
+        <div class="panel panel-default">
+            <div class="panel-body">
+
+                        <label>подргузите 7 самых сочных фоточек:</label>
+                        <br>
+                        <hr>
+                        <br>
+                        {{> dropzone}}
+                        <br>
+                        <hr>
+                        <br>
+
+            </div>
+        <p>последнии загруженные фото:</p>
+        </div>
+    </div>
+    <div style='display:-webkit-box;flex-wrap: wrap;justify-content: space-around;'>
+    {{#each topScorers}}
+      <!-- <p>{{_id}}</p> -->
+      <img src={{url}} style="min-width: 250px; height: 250px; padding: 50px;" />
+    {{/each}}
+  </div>
+</template>
+
+
+<template name="uploadedInfo">
+    <div class="">
+        <ul class="">
+            {{#each this}}
+                <li>
+                    <a href="/upload/{{path}}"><img src="{{src}}"></a><br/>
+                    <label>{{ name }}</label> <br/>
+                    {{ size }} B<br>
+                    {{#if _id}}
+                        <a class="">Delete</a>
+                    {{/if}}
+                </li>
+            {{/each}}
+        </ul>
+    </div>
+</template>

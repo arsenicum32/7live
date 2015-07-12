@@ -3,12 +3,23 @@
 </head>
 
 <body>
-  {{> background}}
-  {{> userView}}
-  {{> wall}}
+  {{> main}}
+  <!-- {{> edit}} -->
 </body>
 
-<template name="hello">
-  <button>Click Me</button>
-  <p>You've pressed the button {{counter}} times.</p>
+<template name="main">
+  {{#if view.h}}
+    {{> background}}
+    {{> userView}}
+    {{> wall}}
+    <div id='addButton'>+</div>
+  {{else}}
+    {{#if view.e}}
+      {{> event}}
+    {{else}}
+      {{> edit}}
+      <div id='createButton'>+создать</div>
+      <div id='backButton'>назад</div>
+    {{/if}}
+  {{/if}}
 </template>
