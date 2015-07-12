@@ -17,6 +17,12 @@ Template.userView.events({
   'mouseleave #userView': function(){
     $(".contentUser").hide();
   },
+  'mousemove':function(){
+    $('#login').css('background',Ccolors[Math.floor((Math.random() * (Ccolors.length-1)))]);
+    $('#singUP').css('background',Ccolors[Math.floor((Math.random() * (Ccolors.length-1)))]);
+    $('.contentUser').find('p').css('background',Ccolors[Math.floor((Math.random() * (Ccolors.length-1)))]);
+    //$('.contentUser a').css('background',Ccolors[Math.floor((Math.random() * (Ccolors.length-1)))]);
+  }
 });
 
 Template.wall.events({
