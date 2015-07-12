@@ -1,6 +1,6 @@
 Template.background.helpers({
   img:function(){
-    return 'background.jpg';
+    return Session.get('backgroundImage');
   }
 });
 
@@ -43,6 +43,6 @@ Template.main.helpers({
 
 Template.wall.helpers({
   posts: function(){
-    return Posts.find();//[{title:'one'},{title:'two'}];//Posts.find();
+    return Posts.find().fetch().reverse();//[{title:'one'},{title:'two'}];//Posts.find();
   }
 });

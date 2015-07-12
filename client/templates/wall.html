@@ -3,14 +3,11 @@
     <!-- {{#each posts}}
       <p>{{title}}</p>
     {{/each}} -->
-
-    <div class='postItem'>
-      <h1>title super</h1>
-      <p>12/07<br>likes:<br>12<br><span style='color:red;font-size:54px'>&hearts;</span></p>
+    {{#each posts}}
+    <div class='postItem' ID={{_id}} style='background-image: url({{photo}});background-repeat: none;background-position: 50%;background-repeat: none;'>
+      <h1>{{title}}</h1>
+      <p style="max-width:9vw">{{date}}<br>likes:<br>{{likes.length}}<br><span style='color:red;font-size:54px'>&hearts;</span></p>
     </div>
-    <div class='postItem'>
-      <h1>title supesvsd</h1>
-      <p>15/02<br>likes:<br>12<br><span style='color:black;font-size:54px'>&clubs;</span></p>
-    </div>
+    {{/each}}
   </div>
 </template>
