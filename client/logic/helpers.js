@@ -6,7 +6,7 @@ Template.background.helpers({
 
 Template.event.helpers({
   sound: function(){
-    return 'foo.wav';
+    return Session.get('backgroundSound');
   },
   soundFormat: function() {
     return 'wav';

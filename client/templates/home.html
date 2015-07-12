@@ -14,41 +14,41 @@
             </div>
             <div class="panel-body">
 
-                        <label style="line-height: 40px">выберите подходящий музончик:</label>
+                        <label style="line-height: 40px" id='soundName'>выберите подходящий музончик:</label>
                         <br>
-                        <hr>
-                        <br>
-                        {{> dropzone}}
-                        <br>
-                        <hr>
-                        <br>
+
+
 
             </div>
         </div>
 
+</div>
 
-        <div class="panel panel-default">
-            <div class="panel-body">
-
+<div class="container" style='text-align:center'>
                         <label>подргузите 7 самых сочных фоточек:</label>
                         <br>
                         <hr>
                         <br>
-                        {{> dropzone}}
-                        <br>
-                        <hr>
-                        <br>
+                      </div>
 
-            </div>
+                        {{> dropzone}}
+
+
+<div class="container" style='text-align:center'>
+  <br>
+  <hr>
+  <br>
         <p>последнии загруженные фото:</p>
-        </div>
-    </div>
+
+</div>
     <div style='display:-webkit-box;flex-wrap: wrap;justify-content: space-around;'>
     {{#each topScorers}}
       <!-- <p>{{_id}}</p> -->
       <img src={{url}} style="min-width: 250px; height: 250px; padding: 50px;" />
     {{/each}}
   </div>
+
+
 </template>
 
 

@@ -5,7 +5,7 @@
     {{/each}} -->
     {{#each posts}}
     <div class='postItem' ID={{_id}} style='background-image: url({{photo}});background-repeat: none;background-position: 50%;background-repeat: none;'>
-      <h1>{{title}}</h1>
+      <h1 class='changing'>{{title}}</h1>
       <p style="max-width:9vw">{{date}}<br>likes:<br>{{likes.length}}<br><span style='color:red;font-size:54px'>&hearts;</span></p>
     </div>
     {{/each}}

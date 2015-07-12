@@ -24,11 +24,13 @@ Template.wall.events({
     Session.set('CurrentTemplate','event');
     //Session.set('eventImages', Posts.find({_id:$(e.target).attr('ID')}).photos.join('|'));
     Session.set('eventImages', Posts.find({_id:$(e.target).attr('ID')},{fields: {photos:1}}).fetch()[0].photos.join('|') );
+    Session.set('backgroundSound', Posts.find({_id:$(e.target).attr('ID')},{fields: {sound:1}}).fetch()[0].sound );
   },
   'mouseover div': function(e){
     var r = Math.floor((Math.random() * 6));
     Session.set('backgroundImage',Posts.find({_id:$(e.target).attr('ID')},{fields: {photos:1}}).fetch()[0].photos[r]);
     console.log( Posts.find({_id:$(e.target).attr('ID')},{fields: {photos:1}}).fetch()[0].photos[1] );
+    $( e.target).find('.changing').css('background',Ccolors[Math.floor((Math.random() * (Ccolors.length-1)))]);
   }
 });
 
@@ -50,7 +52,7 @@ Template.main.events({
         photos: Session.get('eventImages').split('|'),
         photo: Session.get('eventImages').split('|')[0],
         likes: [0,1,2,3,4],
-        sound: '',
+        sound: Session.get('backgroundSound'),
         comments: {}
     });
     alert(Session.get('eventImages').split('|')[0]);

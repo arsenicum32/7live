@@ -6,7 +6,7 @@ Template.edit.helpers({
     return Uploader.info.get();
   },
   topScorers: function(){
-    return Uploads.find();
+    return Uploads.find({}, {sort: {_id:-1}, limit:7} ).fetch();
   }
 });
 
